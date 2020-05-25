@@ -1,0 +1,10 @@
+.back-icon {
+  width: 50rpx;
+  height: 50rpx;
+}
+.green {
+  color: green !important;
+}
+.blue {
+  color: #3a81f6 !important;
+}

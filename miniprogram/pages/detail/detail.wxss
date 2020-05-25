@@ -1,0 +1,45 @@
+.inpt {
+  display: flex;
+  align-items: center;
+  padding: 30rpx 40rpx;
+}
+.title {
+  font-size: 38rpx;
+  color: #040819;
+  padding-right: 20rpx;
+  font-weight: bold;
+}
+.inpt .title-text {
+  background-color: #fefefe;
+  flex: 1;
+  padding: 20rpx;
+  color: #040819;
+  border-radius: 6rpx;
+}
+.img {
+  padding: 30rpx 40rpx;
+}
+.img-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 20rpx;
+}
+.item {
+  flex: none;
+  width: 200rpx;
+  height: 200rpx;
+  background-color: #fefefe;
+  margin: 12rpx;
+  overflow: hidden
+}
+.item image {
+  display: block;
+  width: 200rpx;
+  height: 200rpx;
+}
+.content {
+  padding: 0 40rpx 30rpx;
+}
+.cure {
+  font-size: 30rpx;
+}

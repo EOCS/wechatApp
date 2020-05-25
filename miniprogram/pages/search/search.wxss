@@ -1,0 +1,58 @@
+.title-bar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+}
+
+.search-bar {
+  color: #333;
+  width: 38%;
+  position: absolute;
+  left: 90rpx;
+  padding-left: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 50px;
+  font-size: 30rpx;
+  background: #eee;
+  padding: 0 20rpx 0 90rpx;
+}
+.search-icon {
+  display: block;
+  position: absolute;
+  bottom: 16rpx;
+  left: 90rpx;
+  width: 38rpx;
+  height: 38rpx;
+  padding: 20rpx;
+}
+.back-icon {
+  position: absolute;
+  left: 20rpx;
+  bottom: 25rpx;
+
+}
+.tags {
+  padding: 50rpx 30rpx 0;
+}
+.title {
+  color: #666;
+  font-size: 28rpx;
+}
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 12rpx;
+}
+.wrapper view {
+  flex: none;
+  padding: 8rpx 10rpx;
+  background-color: #eee;
+  color: #222;
+  font-size: 28rpx;
+  border-radius: 6rpx;
+  margin: 18rpx 16rpx 0 0;
+}

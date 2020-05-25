@@ -1,0 +1,35 @@
+<view class="title-bar" style="height:{{navBarHeight}}px;">
+  <input class="search-bar" 
+  style="height:{{menuHeight}}px; min-height:{{menuHeight}}px; line-height:{{menuHeight}}px; bottom:{{menuBotton}}px;"
+  placeholder="搜索"
+  confirm-type="search"
+  focus="true"
+  bindconfirm="confirmSearch"
+  bindinput="searchInpt"
+  >
+  </input>
+  <image class="search-icon" src="/images/icon/search.png" bindtap="confirmSearchBtn"></image>
+  <image class="back-icon" src="/images/icon/back.png" bindtap="back"></image>
+</view>
+
+<view class="tags">
+	<view class="title">历史搜索</view>
+  <view class="wrapper">
+    <view>拉大发</view>
+    <view>拉大发拉大发</view>
+    <view>拉大阿斯打顿发</view>
+    <view>拉大发打</view>
+    <view>拉大</view>
+  </view>
+</view>
+
+<view class="tags">
+  <view class="title">猜测你的需求</view>
+  <view class="wrapper">
+    <view>拉大发</view>
+    <view>拉大发拉大发</view>
+    <view>拉大阿斯打顿发</view>
+    <view>拉大发打</view>
+    <view>拉大</view>
+  </view>
+</view>

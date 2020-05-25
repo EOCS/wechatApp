@@ -1,0 +1,4 @@
+<navigator class="item" wx:for="{{10}}" url="/pages/teachDetail/teachDetail">
+  <view class="info">是的发送到发送到发送到发顺丰，撒的发送到发送到发顺丰！</view>
+  <image src="https://files.cn-healthcare.com/upload/20200514/1589448416441.jpg" mode="aspectFill"></image>
+</navigator>

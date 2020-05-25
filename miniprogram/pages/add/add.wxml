@@ -1,0 +1,20 @@
+<view class="inpt">
+  <view class="title">诊断</view>
+  <input bindinput="searchInpt" maxlength="20" placeholder="请输入诊断名称"></input>
+</view>
+<view class="img">
+  <view class="title">上传诊断相关图片</view>
+  <view class="img-wrap">
+    <view class="item" wx:for="{{imgList}}" wx:key="index"><image src="{{item}}" mode="aspectFill"></image></view>
+    <view class="upload" bindtap="upload" wx:if="{{imgList.length < 9}}">+</view>
+  </view>
+</view>
+<view class="inpt now">
+  <checkbox-group bindchange="checkboxChange">
+    <label class="checkbox">
+      <checkbox value="cure" checked />已治愈
+    </label>
+  </checkbox-group>
+</view>
+
+<view class="btn {{value ? '' : 'disabled'}}" bindtap="submit">下一步</view>

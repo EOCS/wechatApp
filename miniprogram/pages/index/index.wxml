@@ -1,0 +1,29 @@
+<view class="title-bar" style="height:{{navBarHeight}}px;">
+  <view class="search-bar" style="height:{{menuHeight}}px; min-height:{{menuHeight}}px; line-height:{{menuHeight}}px; left:{{menuRight}}px; bottom:{{menuBotton}}px;">
+    <navigator class="add" url="/pages/add/add" hover-class="none">+</navigator>
+    <navigator class="search" url="/pages/search/search" hover-class="none">
+      <image src="/images/icon/search.png"></image>
+      搜索
+    </navigator>
+  </view>
+</view>
+
+<view class="list">
+  <navigator class="item" wx:for="{{list}}" wx:key="index" url="/pages/detail/detail?id={{item._id}}">
+    <view class="head">
+      {{item.title}}
+      <view class="{{item.cure ? 'green' : 'blue'}}">{{item.cure ? '治愈' : '治愈中'}}</view>
+    </view>
+    <view class="desc">{{item.content}}</view>
+    <view class="btm">
+      <view class="btns">
+        <view catchtap="follow">关注后续</view>
+        <view catchtap="comeon">加油</view>
+      </view>
+      <!-- <view class="user-name">user name</view> -->
+      <view class="user-name">{{item.date}}</view>
+    </view>
+  </navigator>
+</view>
+
+<view class="footer">End</view>

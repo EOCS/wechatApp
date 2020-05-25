@@ -1,0 +1,28 @@
+<view class="edit" style="padding-top: {{statusBarHeight}}px">
+  <image class="back-icon" src="/images/icon/back.png" bindtap="back"></image>
+  <i class="iconfont icon-font" bindtap="showEditPopup"></i>
+  <i class="iconfont icon-charutupian" bindtap="insertImage"></i>
+  <i class="iconfont icon-undo" bindtap="undo"></i>
+  <!-- <i class="iconfont icon-redo" bindtap="redo"></i> -->
+  <i class="btn" bindtap="preview">预览</i>
+  <view class="edit-popup" bindtap="format" wx:if="{{editPopup}}">
+    <i class="iconfont icon-zitijiacu {{formats.bold ? 'ql-active' : ''}}" data-name="bold"></i>
+    <i class="iconfont icon-zitixieti {{formats.italic ? 'ql-active' : ''}}" data-name="italic"></i>
+    <i class="iconfont icon-fengexian" bindtap="insertDivider"></i>
+    <i class="iconfont icon-format-header-1 {{formats.header === 1 ? 'ql-active' : ''}}" data-name="header" data-value="{{1}}"></i>
+    <i class="iconfont icon-youxupailie {{formats.list === 'ordered' ? 'ql-active' : ''}}" data-name="list" data-value="ordered"></i>
+    <i class="iconfont icon-wuxupailie {{formats.list === 'bullet' ? 'ql-active' : ''}}" data-name="list" data-value="bullet"></i>
+  </view>
+</view>
+
+<editor id="editor" placeholder="分享你的疗伤经历" showImgSize showImgToolbar showImgResize bindstatuschange="onStatusChange" bindready="onEditorReady" style="padding-top: {{navBarHeight + 12}}px"></editor>
+
+<view class="preview" style="padding-top: {{navBarHeight}}px" wx:if="{{showPreview}}">
+  <view class="btns" style="padding-top: {{statusBarHeight}}px;height: {{navBarHeight}}px">
+    <i class="btn continue" bindtap="reEdit">继续编辑</i>
+    <i class="btn" bindtap="submit">发布</i>
+  </view>
+  <scroll-view scroll-y class="rich-text-wrapper" style="padding-top: {{navBarHeight + 12}}px">
+    <rich-text class="rich-text" nodes="{{html}}"></rich-text>
+  </scroll-view>
+</view>

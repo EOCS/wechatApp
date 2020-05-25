@@ -1,0 +1,33 @@
+.top {
+  height: 120rpx;
+  background-color: #0177fe;
+}
+.user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: -84rpx;
+}
+.user-avatar {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 8rpx solid #fff;
+  background-color: #fff;
+}
+.user-name {
+  padding-top: 20rpx;
+  color: #333;
+  font-weight: bold;
+  font-size: 34rpx;
+}
+.list {
+  padding-top: 80rpx;
+}
+.list navigator {
+  padding: 40rpx;
+  font-size: 32rpx;
+  color: #333;
+}

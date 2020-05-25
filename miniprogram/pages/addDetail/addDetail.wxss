@@ -1,0 +1,137 @@
+@import "../../iconfont/iconfont.wxss";
+
+.iconfont {
+  display: block;
+  padding: 8px 8px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+#editor {
+  box-sizing: border-box;
+  padding: 12px 15px;
+  width: 100%;
+  background: #fff;
+  font-size: 16px;
+  line-height: 1.5;
+  height: 100vh;
+}
+
+.ql-active {
+  color: #3a81f6;
+}
+
+.edit {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  border-bottom: 1rpx solid #ebecf5;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+  padding-bottom: 6rpx;
+}
+
+.edit-popup {
+  position: fixed;
+  top: 180rpx;
+  left: 48%;
+  transform: translateX(-50%);
+  border: 1rpx solid #ebecf5;
+  border-radius: 8rpx;
+  white-space: nowrap;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.edit-popup:after {
+  content: "";
+  position: absolute;
+  top: -14rpx;
+  left: 34rpx;
+  width: 30rpx;
+  height: 30rpx;
+  border: 1rpx solid #ebecf5;
+  transform: rotateZ(-135deg);
+  background-color: #fff;
+  border-top: 0;
+  border-left: 0;
+  border-radius: 2rpx;
+}
+.btn {
+  font-size: 30rpx;
+  color: #fefefe;
+  text-align: center;
+  background-color: #5bc7f6;
+  border-radius: 8rpx;
+  padding: 16rpx 20rpx;
+  line-height: 1;
+  margin-left: 5rpx;
+  
+}
+.btn:active {
+  background-color: #62d4f7;
+}
+.back-icon {
+  padding: 0 20rpx;
+}
+.preview {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 3;
+  box-sizing: border-box;
+  transform: translateY(100%);
+  opacity: 0;
+  animation: slideToTop .3s forwards;
+}
+.btns {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-right: 200rpx;
+  z-index: 3;
+  border-bottom: 1rpx solid #ebecf5;
+}
+.continue {
+  background-color: #ebecf5;
+  color: #040819;
+}
+.continue:active {
+  background-color: #ebecf5;
+  color: #666;
+}
+.rich-text-wrapper {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  background: #fefefe;
+  z-index: 2;
+  padding: 40rpx;
+}
+@keyframes slideToTop {
+  0% {
+    opacity: 0;
+    transform: translateY(100%)
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0)
+  }
+}
