@@ -1,3 +1,6 @@
+page {
+  background-color: #ebecf5;
+}
 .back-icon {
   width: 50rpx;
   height: 50rpx;

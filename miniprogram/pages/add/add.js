@@ -33,7 +33,6 @@ Page({
     })
   },
   async submit() {
-    console.log(this.data.checked)
     if (!this.data.value) {
       return wx.showToast({
         title: '请填写诊断项',
@@ -50,7 +49,6 @@ Page({
     })
     const images = await this.uploadImage()
     const resImg = images.map(item => item.fileID)
-    console.log(resImg, 99)
     // 上传并生成_id
     this.saveDB(resImg, this.data.value)
   },
@@ -58,7 +56,7 @@ Page({
     let pArr = [];
     this.data.imgList.forEach((filePath, index) => {
       const temp = wx.cloud.uploadFile({
-        cloudPath: '' + new Date().getTime() + index, // 文件名
+        cloudPath: `${new Date().getTime()}${index}.png`,// 文件名
         filePath, // 文件路径
       })
       pArr.push(temp)
@@ -73,6 +71,7 @@ Page({
         images,
         cure: this.data.cure,
         date: new Date(),
+        encourage: Math.floor(Math.random() * 1000 + 100),
       }
     }).then(res => {
       wx.redirectTo({

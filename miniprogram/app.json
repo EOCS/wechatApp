@@ -7,12 +7,14 @@
     "pages/detail/detail",
     "pages/teachDetail/teachDetail",
     "pages/add/add",
-    "pages/addDetail/addDetail"
+    "pages/addDetail/addDetail",
+    "pages/myPublish/myPublish",
+    "pages/myFollow/myFollow"
   ],
   "window": {
     "backgroundColor": "#ebecf5",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarBackgroundColor": "#ebecf5",
     "navigationBarTitleText": "123",
     "navigationBarTextStyle": "black"
   },

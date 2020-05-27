@@ -1,13 +1,8 @@
-.top {
-  height: 120rpx;
-  background-color: #0177fe;
-}
+
 .user {
   display: flex;
-  justify-content: center;
   align-items: center;
-  flex-direction: column;
-  margin-top: -84rpx;
+  padding: 30rpx 40rpx;
 }
 .user-avatar {
   width: 160rpx;
@@ -18,16 +13,22 @@
   background-color: #fff;
 }
 .user-name {
-  padding-top: 20rpx;
+  padding: 20rpx;
   color: #333;
   font-weight: bold;
   font-size: 34rpx;
 }
 .list {
-  padding-top: 80rpx;
+  padding-top: 30rpx;
 }
 .list navigator {
   padding: 40rpx;
   font-size: 32rpx;
   color: #333;
+  border-bottom: 1rpx solid #ebecf5;
+  /* background: url() no-repeat center right; */
+  background-size: 40rpx;
+}
+.list navigator:last-child {
+  border: 0;
 }

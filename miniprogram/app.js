@@ -21,7 +21,8 @@ App({
       menuBotton: 0, // 胶囊距底部间距（保持底部间距一致）
       menuHeight: 0, // 胶囊高度（自定义内容可与胶囊高度保证一致）
     }
-
+    this.getUserInfo();
+    
     // 获取系统信息
     const systemInfo = wx.getSystemInfoSync();
     // 胶囊按钮位置信息
@@ -32,5 +33,12 @@ App({
     this.globalData.menuBotton = menuButtonInfo.top - systemInfo.statusBarHeight;
     this.globalData.menuHeight = menuButtonInfo.height;
     this.globalData.statusBarHeight = systemInfo.statusBarHeight;
-  }
+  },
+  getUserInfo() {
+    wx.cloud.callFunction({
+      name: 'login',
+    }).then(res => {
+      this.globalData.openid = res.result.openid
+    }).catch(console.error)
+  },
 })
