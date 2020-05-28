@@ -1,8 +1,10 @@
-<view class="user">
-  <open-data class="user-avatar" type="userAvatarUrl"></open-data>
-  <open-data class="user-name" type="userNickName"></open-data>
-</view>
-<view class="list">
-  <!-- <navigator url="/pages/myPublish/myPublish">我的发布</navigator> -->
-  <navigator url="/pages/myFollow/myFollow">关注后续</navigator>
+<view class="wrapper">
+  <view class="user">
+    <open-data class="user-avatar" type="userAvatarUrl"></open-data>
+    <open-data class="user-name" type="userNickName"></open-data>
+  </view>
+  <view class="list">
+    <!-- <navigator url="/pages/myPublish/myPublish">我的发布</navigator> -->
+    <navigator url="/pages/myFollow/myFollow">我的关注</navigator>
+  </view>
 </view>

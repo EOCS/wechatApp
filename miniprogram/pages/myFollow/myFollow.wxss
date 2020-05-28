@@ -1,1 +1,24 @@
-/* miniprogram/pages/myFollow/myFollow.wxss */
+page {
+  background: #fff;
+}
+.empty {
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+.list {
+  padding: 30rpx 40rpx;
+  background-color: #fff;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+.list navigator {
+  border-bottom: 1rpx solid #ebecf5;
+  padding: 20rpx 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

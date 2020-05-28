@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "CasesList": "../../components/casesList/casesList"
+  },
   "navigationStyle": "custom"
 }

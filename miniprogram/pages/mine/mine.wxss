@@ -1,4 +1,7 @@
-
+.wrapper {
+  min-height: 100vh;
+  background: #fff;
+}
 .user {
   display: flex;
   align-items: center;
@@ -26,8 +29,6 @@
   font-size: 32rpx;
   color: #333;
   border-bottom: 1rpx solid #ebecf5;
-  /* background: url() no-repeat center right; */
-  background-size: 40rpx;
 }
 .list navigator:last-child {
   border: 0;

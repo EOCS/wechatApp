@@ -1,4 +1,4 @@
-// miniprogram/pages/teach/teach.js
+// miniprogram/pages/drug/drug.js
 Page({
 
   /**

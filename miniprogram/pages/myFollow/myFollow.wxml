@@ -1,4 +1,4 @@
-<view wx:if="{{list.length}}">
+<view wx:if="{{list.length}}" class="list">
   <navigator wx:for="{{list}}" wx:key="index" url="/pages/detail/detail?id={{item.collectionId}}">{{item.title}}</navigator>
 </view>
-<view wx:elif="{{showList}}">暂无关注后续</view>
+<view wx:elif="{{showList}}" class="empty">暂无关注</view>

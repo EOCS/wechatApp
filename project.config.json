@@ -97,6 +97,13 @@
 					"id": -1,
 					"name": "myFollow",
 					"pathName": "pages/myFollow/myFollow",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/drug/drug",
+					"pathName": "pages/drug/drug",
 					"scene": null
 				}
 			]

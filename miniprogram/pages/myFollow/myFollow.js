@@ -22,10 +22,7 @@ Page({
   async fetchList() {
     if (this.lock) return
     this.lock = true
-    wx.showLoading({
-      title: '加载中',
-      icon: 'none'
-    })
+    wx.showNavigationBarLoading()
     const res = await db.collection('collection').where({
       _openid: app.globalData.openid,
     }).skip(this.pages * MAX_LIMIT).limit(20).get();
@@ -33,7 +30,7 @@ Page({
     this.setData({ list })
     this.pages++
     this.lock = res.data.length < MAX_LIMIT
-    wx.hideLoading()
+    wx.hideNavigationBarLoading()
     this.setData({ showList: true })
   },
 

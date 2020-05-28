@@ -56,7 +56,7 @@ Page({
     let pArr = [];
     this.data.imgList.forEach((filePath, index) => {
       const temp = wx.cloud.uploadFile({
-        cloudPath: `${new Date().getTime()}${index}.png`,// 文件名
+        cloudPath: `caseImg/${new Date().getTime()}${index}.png`,// 文件名
         filePath, // 文件路径
       })
       pArr.push(temp)

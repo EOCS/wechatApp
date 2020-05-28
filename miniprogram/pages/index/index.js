@@ -23,14 +23,15 @@ Page({
     await db.collection('cases').get().then(res => {
       const list = res.data
       list.forEach((item, index) => {
-        item.content = item.content.replace(/<[^>]+>/g, '')
+        if (item.content) {
+          item.content = item.content.replace(/<[^>]+>/g, '')
+        }
         item.date = this.formateDate(item.date)
       })
       this.setData({ list }, () => {
         this.getAllCollection()
       })
     })
-    console.log(this.data.list)
   },
   formateDate(date) {
     let m = date.getMonth() + 1;
@@ -47,53 +48,6 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  toDetail() {
-    wx.navigateTo({
-      url: '/pages/detail/detail',
-    })
-  },
-  async encourage(e) {
-    if (this.encourageLock) return
-    this.encourageLock = true
-    wx.showToast({
-      title: '为你加油！',
-    })
-    const { id, index } = e.target.dataset
-    this.setData({
-      [`list[${index}].encourage`]: ++this.data.list[index].encourage
-    })
-
-    await db.collection('cases').doc(id).update({
-      data: {
-        encourage: _.inc(1)
-      }
-    })
-
-    this.encourageLock = false
-  },
-  async follow(e) {
-    const index = e.target.dataset.index
-    const list = this.data.list
-    if (list[index].collected) {
-      delete list[index].collected
-      // 云函数
-      wx.cloud.callFunction({
-        name: 'rmCollection',
-        data: {
-          collectionId: list[index]._id,
-        }
-      })
-    } else {
-      list[index].collected = true
-      db.collection('collection').add({
-        data: {
-          title: list[index].title,
-          collectionId: list[index]._id
-        }
-      })
-    }
-    this.setData({ list })
   },
   async getAllCollection() {
     const MAX_LIMIT = 20
@@ -132,5 +86,5 @@ Page({
       })
     })
     this.setData({ list })
-  }
+  },
 })

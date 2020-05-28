@@ -49,11 +49,15 @@ Page({
 
     const list = res.data
     list.forEach((item, index) => {
-      item.content = item.content.replace(/<[^>]+>/g, '')
+      if (item.content) {
+        item.content = item.content.replace(/<[^>]+>/g, '')
+      }
       item.date = this.formateDate(item.date)
     })
 
-    this.setData({list: res.data})
+    this.setData({list: res.data}, () => {
+      this.getAllCollection()
+    })
 
     if(!res.data.length) {
       wx.showToast({
@@ -73,4 +77,42 @@ Page({
   toDouble(num) {
     return +num >= 10 ? num : '0' + num
   },
+  async getAllCollection() {
+    const MAX_LIMIT = 20
+    const countResult = await db.collection('collection').where({
+      _openid: app.globalData.openid,
+    }).count()
+    const total = countResult.total
+    if (total == 0) return;
+    const batchTimes = Math.ceil(total / MAX_LIMIT)
+
+    const tasks = []
+
+    for (let i = 0; i < batchTimes; i++) {
+      const promise = db.collection('collection').where({
+        _openid: app.globalData.openid,
+      }).skip(i * MAX_LIMIT).limit(MAX_LIMIT).get()
+      tasks.push(promise)
+    }
+
+    const res = (await Promise.all(tasks)).reduce((acc, cur) => {
+      return {
+        data: acc.data.concat(cur.data),
+        errMsg: acc.errMsg,
+      }
+    })
+    this.setData({ collection: res.data })
+    this.initListCollection()
+  },
+  initListCollection() {
+    const { list, collection } = this.data
+    list.forEach((item, index) => {
+      collection.forEach(el => {
+        if (el.collectionId == item._id) {
+          list[index].collected = true
+        }
+      })
+    })
+    this.setData({ list })
+  }
 })

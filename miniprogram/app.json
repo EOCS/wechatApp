@@ -1,11 +1,10 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/teach/teach",
+    "pages/drug/drug",
     "pages/mine/mine",
     "pages/search/search",
     "pages/detail/detail",
-    "pages/teachDetail/teachDetail",
     "pages/add/add",
     "pages/addDetail/addDetail",
     "pages/myPublish/myPublish",
@@ -15,7 +14,7 @@
     "backgroundColor": "#ebecf5",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#ebecf5",
-    "navigationBarTitleText": "123",
+    "navigationBarTitleText": "病例百科",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
@@ -30,7 +29,7 @@
         "selectedIconPath": "images/tabbar/home_select.png"
       },
       {
-        "pagePath": "pages/teach/teach",
+        "pagePath": "pages/drug/drug",
         "text": "药品",
         "iconPath": "images/tabbar/teach.png",
         "selectedIconPath": "images/tabbar/teach_select.png"

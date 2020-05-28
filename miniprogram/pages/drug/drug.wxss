@@ -1,0 +1,13 @@
+page {
+  background-color: #fff;
+}
+.list {
+  min-height: 100vh;
+  background-color: #fff;
+  padding: 30rpx 40rpx;
+}
+.list view {
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #efefef;
+  font-size: 30rpx;
+}
