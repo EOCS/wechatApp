@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "home-item": "../../components/homeItem/homeItem"
+  },
+  "navigationStyle": "custom"
+}

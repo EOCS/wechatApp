@@ -104,6 +104,13 @@
 					"id": -1,
 					"name": "pages/drug/drug",
 					"pathName": "pages/drug/drug",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/home/home",
+					"pathName": "pages/home/home",
 					"scene": null
 				}
 			]

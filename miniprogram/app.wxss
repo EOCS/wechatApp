@@ -1,5 +1,6 @@
+@import "./iconfont/iconfont.wxss";
 page {
-  background-color: #ebecf5;
+  background-color: #fefefe;
 }
 .back-icon {
   width: 50rpx;

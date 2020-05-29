@@ -8,39 +8,31 @@
     "pages/add/add",
     "pages/addDetail/addDetail",
     "pages/myPublish/myPublish",
-    "pages/myFollow/myFollow"
+    "pages/myFollow/myFollow",
+    "pages/home/home"
   ],
   "window": {
-    "backgroundColor": "#ebecf5",
+    "backgroundColor": "#fefefe",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#ebecf5",
-    "navigationBarTitleText": "病例百科",
+    "navigationBarBackgroundColor": "#fefefe",
+    "navigationBarTitleText": "小白",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "color": "#cccccc",
-    "selectedColor": "#333333",
-    "backgroundColor": "#ffffff",
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "首页",
-        "iconPath": "images/tabbar/home.png",
-        "selectedIconPath": "images/tabbar/home_select.png"
-      },
-      {
-        "pagePath": "pages/drug/drug",
-        "text": "药品",
-        "iconPath": "images/tabbar/teach.png",
-        "selectedIconPath": "images/tabbar/teach_select.png"
-      },
-      {
-        "pagePath": "pages/mine/mine",
-        "text": "我的",
-        "iconPath": "images/tabbar/mine.png",
-        "selectedIconPath": "images/tabbar/mine_select.png"
-      }
-    ]
+    "color": "#333",
+    "selectedColor": "#333",
+    "backgroundColor": "#fefefe",
+    "list": [{
+      "pagePath": "pages/home/home",
+      "text": "首页",
+      "iconPath": "images/tabbar/icon_work.png",
+      "selectedIconPath": "images/tabbar/icon_work_fill.png"
+    }, {
+      "pagePath": "pages/mine/mine",
+      "text": "我",
+      "iconPath": "images/tabbar/icon_signal.png",
+      "selectedIconPath": "images/tabbar/icon_signal_fill.png"
+    }]
   },
   "sitemapLocation": "sitemap.json",
   "style": "v2"

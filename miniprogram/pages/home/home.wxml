@@ -1,0 +1,26 @@
+<view class="titlebar">
+  <view class="search-wrapper" style="padding-top: {{statusBarHeight}}px; height: {{navBarHeight}}px">
+    <view class="iconfont icon-icon_roundadd"></view>
+    <view class="search-bar" style="height: {{menuHeight}}px">
+      <view class="iconfont icon-icon_search"></view>
+      <view class="placeholder">新冠状肺炎</view>
+    </view>
+  </view>
+  <view class="menu">
+    <view class="menu-item {{swiperCurrent == 0 ? 'active' : ''}}" data-index="0" bindtap="btnSelect">最新</view>
+    <view class="menu-item {{swiperCurrent == 1 ? 'active' : ''}}" data-index="1" bindtap="btnSelect">精选</view>
+    <view class="line {{swiperCurrent == 1 ? 'active' : ''}}"></view>
+  </view>
+</view>
+<swiper duration="200" bindchange="swiperChange" current="{{swiperCurrent}}">
+  <swiper-item>
+    <scroll-view scroll-y>
+      <home-item list="{{list}}" />
+    </scroll-view>
+  </swiper-item>
+  <swiper-item>
+    <scroll-view scroll-y>
+      asdfasdfasdfasf
+    </scroll-view>
+  </swiper-item>
+</swiper>
