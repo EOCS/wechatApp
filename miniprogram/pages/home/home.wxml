@@ -20,7 +20,7 @@
   </swiper-item>
   <swiper-item>
     <scroll-view scroll-y>
-      asdfasdfasdfasf
+      <home-item list="{{list}}" />
     </scroll-view>
   </swiper-item>
 </swiper>

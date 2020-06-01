@@ -1,1 +1,68 @@
-/* components/homeItem/homeItem.wxss */
+.list {
+  padding: 10rpx 28rpx;
+}
+.item {
+  padding: 22rpx 0 28rpx;
+  border-bottom: 1rpx solid #f6f6f6;
+}
+.item:last-child {
+  border: 0;
+}
+.title {
+  font-size: 34rpx;
+  line-height: 50rpx;
+  color: #111;
+}
+.info {
+  display: flex;
+  align-items: center;
+  padding-top: 12rpx;
+}
+.user {
+  display: flex;
+  align-items: center;
+  color: #545454;
+  font-size: 25rpx;
+}
+.user image {
+  width: 42rpx;
+  height: 42rpx;
+  border-radius: 50%;
+  margin-right: 12rpx;
+  background-color: #f6f6f6;
+}
+.desc {
+  font-size: 28rpx;
+  line-height: 42rpx;
+  color: #303030;
+  padding-top: 10rpx;
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.desc-img {
+  display: block;
+  flex: none;
+  width: 190rpx;
+  height: 133rpx;
+  border-radius: 12rpx;
+  background-color: #f6f6f6;
+  margin-left: 38rpx;
+}
+.tags-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 24rpx;
+  color: #999;
+  padding-top: 16rpx;
+}
+.tags {
+  display: flex;
+  align-items: center;
+}
+.tags text {
+  padding: 0 12rpx;
+}

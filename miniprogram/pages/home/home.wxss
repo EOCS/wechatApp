@@ -81,7 +81,7 @@ swiper, swiper-item, scroll-view {
 }
 scroll-view {
   box-sizing: border-box;
-  padding-top: 230rpx;
+  padding-top: 200rpx;
 }
 .item {
   height: 100px;

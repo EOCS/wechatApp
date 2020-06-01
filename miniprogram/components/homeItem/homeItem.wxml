@@ -1,15 +1,20 @@
 <view class="list">
-  <view class="item">
+  <navigator class="item" url="" hover-class="none" wx:for="{{10}}" wx:key="index">
     <view class="title">标题标题标题标题标题标题标题标题</view>
     <view class="info">
       <view class="text">
-        <view class="user"><image src=""></image>名字名字名字名字</view>
+        <view class="user"><image src="cloud://onlin-76a31e.6f6e-onlin-76a31e-1258641911/detailImg/15906507042671.png" mode="aspectFill"></image>名字名字名字名字</view>
         <view class="desc">描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述</view>
-        <view class="tags">
-          <view>868768 加油</view> · <view>868768 加油</view>
-        </view>
       </view>
-      <image src=""></image>
+      <image src="cloud://onlin-76a31e.6f6e-onlin-76a31e-1258641911/detailImg/15906507042671.png" mode="aspectFill" class="desc-img"></image>
     </view>
-  </view>
+    <view class="tags-wrapper">
+      <view class="tags">
+        <view>7624 加油</view>
+        <text>·</text>
+        <view>8687 回复</view>
+      </view>
+      <view class="date">05-23 15:30</view>
+    </view>
+  </navigator>
 </view>
