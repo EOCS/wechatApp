@@ -10,24 +10,26 @@ Page({
     content: '',
     date: null,
     cure: '',
+    active: false,
+    html: '<div>123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123</div><h1>html</h1>'
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad (options) {
-    console.log(options)
-    db.collection('cases').doc(options.id).get().then(res => {
-      const { title, images, content, date, cure } = res.data;
-      this.setData({
-        title,
-        images,
-        content,
-        date,
-        cure,
-      })
-      console.log(res)
-    })
+    // console.log(options)
+    // db.collection('cases').doc(options.id).get().then(res => {
+    //   const { title, images, content, date, cure } = res.data;
+    //   this.setData({
+    //     title,
+    //     images,
+    //     content,
+    //     date,
+    //     cure,
+    //   })
+    //   console.log(res)
+    // })
   },
 
   /**

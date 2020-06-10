@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/home/home",
     "pages/index/index",
     "pages/drug/drug",
     "pages/mine/mine",
@@ -8,8 +9,7 @@
     "pages/add/add",
     "pages/addDetail/addDetail",
     "pages/myPublish/myPublish",
-    "pages/myFollow/myFollow",
-    "pages/home/home"
+    "pages/myFollow/myFollow"
   ],
   "window": {
     "backgroundColor": "#fefefe",
@@ -35,5 +35,10 @@
     }]
   },
   "sitemapLocation": "sitemap.json",
-  "style": "v2"
+  "style": "v2",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于展示发布内容"
+    }
+  }
 }

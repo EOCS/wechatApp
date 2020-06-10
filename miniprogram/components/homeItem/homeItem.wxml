@@ -1,5 +1,5 @@
 <view class="list">
-  <navigator class="item" url="" hover-class="none" wx:for="{{10}}" wx:key="index">
+  <navigator class="item" url="/pages/detail/detail?id=123" hover-class="none" wx:for="{{2}}" wx:key="index">
     <view class="title">标题标题标题标题标题标题标题标题</view>
     <view class="info">
       <view class="text">

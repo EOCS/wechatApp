@@ -1,17 +1,59 @@
-<view class="inpt">
-  <view class="title">诊断</view>
-  <view class="title-text">{{title}}</view>
-  <view class="cure {{cure ? 'green' : 'blue'}}">{{cure ? '治愈' : '治愈中'}}</view>
+<view class="desc">
+  描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述描述。
 </view>
-<view class="img">
-  <view class="title">诊断证明</view>
-  <view class="img-wrap">
-    <view class="item" wx:for="{{images}}" wx:key="index"><image src="{{item}}" mode="aspectFill"></image></view>
+<view class="timeline">
+
+  <view class="item">
+    <view class="line"></view>
+    <view class="dots"></view>
+    <view class="wrapper">
+      <view class="date">2018/4/1 14:20</view>
+      <scroll-view scroll-y class="content">
+        <rich-text class="rich-text" nodes="{{html}}"></rich-text>
+      </scroll-view>
+    </view>
   </view>
 </view>
-<view class="img">
-  <view class="title">治愈过程</view>
+
+<view class="comments">
+  <view class="comment-item">
+    <view class="avatar"></view>
+    <view class="info">
+      <view class="head">
+        <view class="username">名字名字名字名字<text>· 04-08</text></view>
+        <view class="good-count">
+          <view>121 <text class="iconfont {{!active ? 'icon-icon_likegood' : 'icon-icon_likegood_fill'}}"></text></view>
+          <view>2 <text class="iconfont rotate {{!active ? 'icon-icon_likegood' : 'icon-icon_likegood_fill'}}"></text></view>
+        </view>
+      </view>
+      <view class="comeon-content">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</view>
+      <view class="img-wrapper">
+        <view></view>
+      </view>
+      <!-- <view class="to-discuss"><view>227条回复 ></view></view> -->
+    </view>
+  </view>
 </view>
-<view class="content">
-  <rich-text class="rich-text" nodes="{{content}}"></rich-text>
+
+<view class="page-bottom">
+  <view class="input">评论…</view>
+  <view class="right">
+    <view class="comeon">
+      <text class="iconfont {{active ? 'icon-icon_shakehands' : 'icon-icon_shakehands_fill'}}"></text>
+      1897
+    </view>
+    <view class="see">
+      <text class="iconfont icon-icon_community_line"></text>
+      839
+    </view>
+    <view class="collect">
+      <text class="iconfont {{!active ? 'icon-icon_star' : 'icon-icon_star_fill'}}"></text>
+      收藏
+    </view>
+    <view class="share">
+      <text class="iconfont icon-icon_share"></text>
+      分享
+    </view>
+  </view>
 </view>
+

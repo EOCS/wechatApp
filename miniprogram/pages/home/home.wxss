@@ -40,10 +40,11 @@
   display: flex;
   align-items: center;
   position: relative;
+  margin: 0 80rpx;
 }
 .menu-item {
   flex: none;
-  width: 50%;
+  width: 33.3333%;
   text-align: center;
   padding: 16rpx 0 26rpx;
   line-height: 1;
@@ -58,7 +59,7 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 50%;
+  width: 33.3333%;
   transition: all .2s;
 }
 .line.active {
@@ -86,4 +87,84 @@ scroll-view {
 .item {
   height: 100px;
   border: 1px solid #333;
+}
+
+.add {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, .6);
+  z-index: 999;
+}
+.add-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.add-box {
+  animation: scaleIn .3s forwards;
+  background: #FFFFFF;
+  width: 540rpx;
+  padding: 50rpx 40rpx;
+  box-sizing: border-box;
+  border-radius: 20rpx;
+  opacity: 0;
+  transform: scale(1.1);
+}
+.cancel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 18rpx;
+  transform: rotateZ(45deg);
+  color: #888;
+}
+.add-title {
+  font-size: 32rpx;
+  color: #222222;
+  text-align: center;
+  font-weight: 500;
+  line-height: 38rpx;
+  padding-bottom: 20rpx;
+}
+.textarea {
+  padding: 1rpx 0;
+  margin-top: 24rpx;
+  width: 100%;
+  background: #F6F6F6;
+  color: #222;
+  font-size: 30rpx;
+  border-radius: 4px;
+  height: 130rpx;
+  line-height: 1.6;
+}
+.box-list {
+  padding-top: 12rpx;
+}
+.box-list .link {
+  border-bottom: 1rpx solid #f6f6f6;
+  font-size: 30rpx;
+  color: #222;
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  white-space: nowrap;
+}
+.box-list .link:last-child {
+  border: 0;
+}
+.box-list .link .iconfont {
+  color: #999;
+}
+.submit {
+  text-align: center;
+  padding: 18rpx;
+  color: #fff;
+  background-color: #3a81f6;
+  border-radius: 4px;
+  margin-top: 25rpx;
 }
