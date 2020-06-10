@@ -9,7 +9,7 @@
   <view class="menu">
     <view class="menu-item {{swiperCurrent == 0 ? 'active' : ''}}" data-index="0" bindtap="btnSelect">关注</view>
     <view class="menu-item {{swiperCurrent == 1 ? 'active' : ''}}" data-index="1" bindtap="btnSelect">推荐</view>
-    <view class="menu-item {{swiperCurrent == 2 ? 'active' : ''}}" data-index="2" bindtap="btnSelect">动态</view>
+    <view class="menu-item {{swiperCurrent == 2 ? 'active' : ''}}" data-index="2" bindtap="btnSelect">柳叶刀</view>
     <view class="line" style="transform: translateX({{100 * swiperCurrent}}%)"></view>
   </view>
 </view>
@@ -26,33 +26,9 @@
   </swiper-item>
   <swiper-item>
     <scroll-view scroll-y>
-      <view>类似朋友圈，或者说是病友圈</view>
+      <view>资讯类文章</view>
     </scroll-view>
   </swiper-item>
 </swiper>
 
-<view class="add" wx:if="{{showAdd}}">
-  <view class="add-wrapper">
-    <view class="add-box">
-      <view class="add-title">发布消息</view>
-      <textarea class="textarea" placeholder="简述你要记录的内容" fixed></textarea>
-      <view class="box-list">
-        <picker bindchange="selectSex" range="{{sexRange}}">
-          <view class="link">
-            {{sexIndex !== -1 ? sexRange[sexIndex] : '你的性别'}}
-            <text class="iconfont icon-icon_next_arrow"></text>
-          </view>
-        </picker>
-        <picker bindchange="selectAge" value="18" range="{{ageRange}}">
-          <view class="link">
-            {{ageIndex ? ageRange[ageIndex] : '你的年龄'}}
-            <text class="iconfont icon-icon_next_arrow"></text>
-          </view>
-        </picker>
-        <view class="addr link" bindtap="getLocation">所在位置<text class="iconfont icon-icon_next_arrow"></text></view>
-      </view>
-      <view class="submit">发布</view>
-      <view class="cancel iconfont icon-icon_add" bindtap="addModal"></view>
-    </view>
-  </view>
-</view>
+<add-desc showAdd="{{showAdd}}" />

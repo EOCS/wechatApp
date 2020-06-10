@@ -1,0 +1,25 @@
+<view class="add" wx:if="{{showAdd}}">
+  <view class="add-wrapper">
+    <view class="add-box">
+      <view class="add-title">发布消息</view>
+      <textarea class="textarea" placeholder="简述你要记录的内容" fixed bindinput="inputDesc"></textarea>
+      <view class="box-list">
+        <picker bindchange="selectSex" range="{{sexRange}}">
+          <view class="link">
+            {{sexIndex !== -1 ? sexRange[sexIndex] : '你的性别'}}
+            <text class="iconfont icon-icon_next_arrow"></text>
+          </view>
+        </picker>
+        <picker bindchange="selectAge" value="18" range="{{ageRange}}">
+          <view class="link">
+            {{ageIndex !== -1 ? ageRange[ageIndex] : '你的年龄'}}
+            <text class="iconfont icon-icon_next_arrow"></text>
+          </view>
+        </picker>
+        <view class="addr link" bindtap="getLocation">{{addr ? addr : '所在位置'}}<text class="iconfont icon-icon_next_arrow"></text></view>
+      </view>
+      <view class="submit {{title ? '' : 'disabled'}} {{loading ? 'loading' : ''}}" bindtap="submit">发布</view>
+      <view class="cancel iconfont icon-icon_add" bindtap="cancel"></view>
+    </view>
+  </view>
+</view>

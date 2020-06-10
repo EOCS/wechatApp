@@ -1,0 +1,89 @@
+.add {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, .6);
+  z-index: 999;
+}
+.add-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.add-box {
+  animation: scaleIn .3s forwards;
+  background: #FFFFFF;
+  width: 540rpx;
+  padding: 50rpx 40rpx;
+  box-sizing: border-box;
+  border-radius: 20rpx;
+  opacity: 0;
+  transform: scale(1.1);
+}
+.cancel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 18rpx;
+  transform: rotateZ(45deg);
+  color: #888;
+}
+.add-title {
+  font-size: 32rpx;
+  color: #222222;
+  text-align: center;
+  font-weight: 500;
+  line-height: 38rpx;
+  padding-bottom: 20rpx;
+}
+.textarea {
+  padding: 1rpx 0;
+  margin-top: 24rpx;
+  width: 100%;
+  background: #F6F6F6;
+  color: #222;
+  font-size: 30rpx;
+  border-radius: 4px;
+  height: 130rpx;
+  line-height: 1.6;
+}
+.box-list {
+  padding-top: 12rpx;
+}
+.box-list .link {
+  border-bottom: 1rpx solid #f6f6f6;
+  font-size: 30rpx;
+  color: #222;
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.box-list .link:last-child {
+  border: 0;
+}
+.box-list .link .iconfont {
+  color: #999;
+}
+.submit {
+  text-align: center;
+  padding: 18rpx;
+  color: #fff;
+  background-color: #3a81f6;
+  border-radius: 4px;
+  margin-top: 25rpx;
+}
+.submit:active {
+  background-color: #286ad8;
+}
+.submit.disabled {
+  opacity: .5;
+}
+.submit.loading {
+  opacity: .5;
+  background: #3a81f6 url(https://6f6e-onlin-76a31e-1258641911.tcb.qcloud.la/icon/loading-spin.svg?sign=8dff953bf5bfd3f548bb07796aceb483&t=1591777691) no-repeat center left 80rpx;
+  background-size: 48rpx;
+}

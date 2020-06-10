@@ -11,7 +11,7 @@
 	},
 	"appid": "wx3f66c00ffd4b76a6",
 	"projectname": "CasesWiki",
-	"libVersion": "2.8.0",
+	"libVersion": "2.9.0",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",

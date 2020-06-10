@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "home-item": "../../components/homeItem/homeItem"
+    "home-item": "/components/homeItem/homeItem",
+    "add-desc": "/components/addDesc/addDesc"
   },
   "navigationStyle": "custom"
 }

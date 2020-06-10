@@ -56,6 +56,10 @@
   max-height: 960rpx;
   padding: 18rpx;
 }
+.rich-text {
+  overflow: hidden;
+  word-break: break-all;
+}
 
 .comments {
   padding: 28rpx;

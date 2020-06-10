@@ -1,11 +1,9 @@
 @import "../../iconfont/iconfont.wxss";
 
 .iconfont {
-  display: block;
-  padding: 8px 8px;
+  padding: 8px;
   width: 24px;
   height: 24px;
-  cursor: pointer;
   font-size: 20px;
 }
 
@@ -14,15 +12,19 @@
   padding: 12px 15px;
   width: 100%;
   background: #fff;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.5;
   height: 100vh;
+  color: #333333;
 }
 
-.ql-active {
+.active {
   color: #3a81f6;
 }
 
+.icon-font-colors.active {
+  color: #999;
+}
 .edit {
   position: fixed;
   top: 0;
@@ -38,8 +40,8 @@
 
 .edit-popup {
   position: fixed;
-  top: 180rpx;
-  left: 48%;
+  top: 160rpx;
+  left: 380rpx;
   transform: translateX(-50%);
   border: 1rpx solid #ebecf5;
   border-radius: 8rpx;
@@ -67,15 +69,14 @@
   font-size: 30rpx;
   color: #fefefe;
   text-align: center;
-  background-color: #5bc7f6;
+  background-color: #3a81f6;
   border-radius: 8rpx;
   padding: 16rpx 20rpx;
   line-height: 1;
-  margin-left: 5rpx;
-  
+  margin-right: 18rpx;
 }
 .btn:active {
-  background-color: #62d4f7;
+  background-color: #286ad8;
 }
 .back-icon {
   padding: 0 20rpx;

@@ -31,6 +31,21 @@
   margin-right: 12rpx;
   background-color: #f6f6f6;
 }
+.user > view {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  white-space: nowrap;
+}
+.user > view text {
+  font-size: 24rpx;
+  color: #666;
+  padding-left: 8rpx;
+  display: block;
+  width: 228rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .desc {
   font-size: 28rpx;
   line-height: 42rpx;

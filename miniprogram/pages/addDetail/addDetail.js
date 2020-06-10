@@ -1,5 +1,6 @@
 const app = getApp();
 const db = wx.cloud.database()
+import { formatDesc, formatDate, getImgSrc } from '../../utils/format.js'
 Page({
   data: {
     editPopup: false,
@@ -11,9 +12,13 @@ Page({
   },
   onLoad(options) {
     this.id = options.id
+    this.date = options.date  // 编辑的时候有date参数
   },
   showEditPopup() {
     this.setData({ editPopup: !this.data.editPopup })
+  },
+  hideEditPopup() {
+    this.setData({ editPopup: false })
   },
   // 编辑器初始化完成时触发
   onEditorReady() {
@@ -21,8 +26,17 @@ Page({
       this.editorCtx = res.context;
     }).exec();
   },
-  undo() {
-    this.editorCtx.undo();
+  changeTextColor() {
+    const { color } = this.data.formats
+    let hex = ''
+    if (!color) {
+      hex = '#999999'
+    } else if (color === '#999999') {
+      hex = '#333333'
+    } else {
+      hex = '#999999'
+    }
+    this.editorCtx.format('color', hex);
   },
   redo() {
     this.editorCtx.redo();
@@ -31,9 +45,9 @@ Page({
     let { name, value } = e.target.dataset;
     if (!name) return;
     this.editorCtx.format(name, value);
-    this.setData({ editPopup: false })
   },
   onStatusChange(e) {
+    this.setData({ editPopup: false })
     this.setData({ formats: e.detail })
   },
   insertDivider() {
@@ -87,10 +101,15 @@ Page({
     wx.showLoading({
       title: '正在发布',
     })
+    const date = date || new Date().getTime();
+    const key = `content.${date}`
     db.collection('cases').doc(this.id)
       .update({
         data: {
-          content: this.data.html
+          [key]: this.data.html,
+          desc: formatDesc(this.data.html),
+          showDate: formatDate(date),
+          showImg: getImgSrc(this.data.html),
         },
         success: () => {
           wx.hideLoading()
@@ -99,5 +118,5 @@ Page({
           })
         }
       })
-  }
+  },
 })

@@ -22,13 +22,17 @@
   font-size: 34rpx;
 }
 .list {
-  padding-top: 30rpx;
+  border-top: 18rpx solid #f6f6f6;
+  padding: 28rpx;
 }
 .list navigator {
   padding: 40rpx;
   font-size: 32rpx;
   color: #333;
-  border-bottom: 1rpx solid #ebecf5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #f6f6f6;
 }
 .list navigator:last-child {
   border: 0;
