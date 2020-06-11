@@ -28,11 +28,30 @@ Page({
     this.setData({ swiperCurrent: e.target.dataset.index })
   },
 
-  onLoad() {
-    db.collection('cases').get().then(res => {
-      console.log(res, 99)
-      this.setData({ list: res.data })
+  toSearch() {
+    wx.navigateTo({
+      url: '/pages/search/search',
     })
+  },
+  onLoad() {
+    // todo: 触底加载更多
+    // 连表查询
+    return wx.cloud.callFunction({
+      name: 'getCasesLookup',
+    }).then(res => {
+      this.setData({ list: res.result.list })
+      console.log(res.result.list)
+    }).catch(console.error)
+  },
+  async onTabItemTap(item) {
+    if (this.doubleTap) {
+      wx.vibrateShort()
+      await this.onLoad()
+    } else {
+      this.doubleTap = 1
+      setTimeout(() => {
+        this.doubleTap = 0
+      }, 300)
+    }
   }
-  
 })

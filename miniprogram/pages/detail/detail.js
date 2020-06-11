@@ -1,83 +1,44 @@
+const app = getApp()
 const db = wx.cloud.database()
+const _ = db.command
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    title: '',
-    images: [],
-    content: '',
-    date: null,
-    cure: '',
-    active: false,
-    html: '<div>123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123</div><h1>html</h1>'
+    res: null,
+    isAuthor: false,
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad (options) {
-    // console.log(options)
-    // db.collection('cases').doc(options.id).get().then(res => {
-    //   const { title, images, content, date, cure } = res.data;
-    //   this.setData({
-    //     title,
-    //     images,
-    //     content,
-    //     date,
-    //     cure,
-    //   })
-    //   console.log(res)
-    // })
+  onLoad(options) {
+    this.id = options.id
+    this.init(true)
+  },
+  onShow () {
+    
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
+  onPullDownRefresh () {
+    this.init()
+  },
+
+  onShareAppMessage () {
 
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  },
+  init(loading) {
+    loading && wx.showNavigationBarLoading()
+    db.collection('cases').doc(this.id).get().then(res => {
+      console.log(res, 1)
+      wx.setNavigationBarTitle({
+        title: res.data.title
+      })
+      this.setData({ res: res.data, isAuthor: res.data._openid === app.globalData.userInfo.OPENID })
+    }).then(() => {
+      wx.hideNavigationBarLoading()
+      wx.stopPullDownRefresh()
+    })
+  }
 })

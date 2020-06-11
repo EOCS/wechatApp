@@ -4,11 +4,18 @@
   color: #222;
   line-height: 1.5;
   padding: 28rpx;
-  border-bottom: 18rpx solid #f6f6f6;
+  border-bottom: 18rpx solid #f5f5f5;
+}
+.addnew {
+  border-bottom: 18rpx solid #f5f5f5;
+  padding: 10px;
+  text-align: center;
+  color: #333;
+  font-size: 15px;
 }
 .timeline {
   padding: 28rpx;
-  border-bottom: 18rpx solid #f6f6f6;
+  border-bottom: 18rpx solid #f5f5f5;
 }
 .timeline .item:last-child .line {
   display: none;
@@ -19,12 +26,32 @@
 }
 .line {
   position: absolute;
-  left: 4px;
+  left: 0;
   height: 100%;
   border-left: 2px solid #f0f0f0;
 }
-.dots {
+.wrapper {
+  position: relative;
+  padding-left: 16px;
+  top: -3px;
+}
+.date {
+  margin-bottom: 8px;
+  padding: 2px;
+  color: #909399;
+  line-height: 1;
+  font-size: 13px;
+  position: sticky;
+  top: 0;
+  background-color: rgba(255, 255, 255, .9);
+  z-index: 2;
+}
+.date:after {
+  content: "";
   position: absolute;
+  top: 0;
+  left: -20px;
+  margin-top: 3px;
   width: 10px;
   height: 10px;
   background-color: #fff;
@@ -32,29 +59,17 @@
   border-radius: 50%;
   box-sizing: border-box;
 }
-.wrapper {
-  position: relative;
-  padding-left: 38rpx;
-  top: -3px;
-}
-.date {
-  margin-bottom: 8px;
-  padding-top: 2px;
-  color: #909399;
-  line-height: 1;
-  font-size: 13px;
-}
 .content {
   box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
   border-radius: 4px;
-  border: 1px solid #ebeef5;
+  border: 1px solid #f5f5f5;
   background-color: #fff;
   overflow: hidden;
   color: #333;
   line-height: 1.5;
   box-sizing: border-box;
-  max-height: 960rpx;
-  padding: 18rpx;
+  padding: 16rpx 18rpx 18rpx;
+  font-size: 30rpx;
 }
 .rich-text {
   overflow: hidden;
@@ -156,7 +171,7 @@
   left: 0;
   right: 0;
   background-color: #fff;
-  border-top: 1rpx solid #f6f6f6;
+  border-top: 1rpx solid #f5f5f5;
   display: flex;
   align-items: center;
   justify-content: space-between;

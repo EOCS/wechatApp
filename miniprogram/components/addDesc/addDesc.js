@@ -96,6 +96,7 @@ Component({
           showDate: date, // 展示的出来的时间，一般为最近的更新时间
           aoligei: 0,   // 加油
           comments: 0,  // 回复
+          content: [],
         }
       }).then(res => {
         console.log(res, 'res')

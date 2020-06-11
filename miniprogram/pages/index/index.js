@@ -52,7 +52,7 @@ Page({
   async getAllCollection() {
     const MAX_LIMIT = 20
     const countResult = await db.collection('collection').where({
-      _openid: app.globalData.openid,
+      _openid: app.globalData.userInfo.OPENID,
     }).count()
     const total = countResult.total
     if(total == 0) return;
@@ -62,7 +62,7 @@ Page({
 
     for (let i = 0; i < batchTimes; i++) {
       const promise = db.collection('collection').where({
-        _openid: app.globalData.openid,
+        _openid: app.globalData.userInfo.OPENID,
       }).skip(i * MAX_LIMIT).limit(MAX_LIMIT).get()
       tasks.push(promise)
     }

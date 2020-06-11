@@ -38,7 +38,7 @@ App({
     wx.cloud.callFunction({
       name: 'login',
     }).then(res => {
-      this.globalData.openid = res.result.openid
+      this.globalData.userInfo = res.result
     }).catch(console.error)
   },
 })

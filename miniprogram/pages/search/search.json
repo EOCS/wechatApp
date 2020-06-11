@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-    "CasesList": "../../components/casesList/casesList"
+    "home-item": "/components/homeItem/homeItem"
   },
   "navigationStyle": "custom"
 }

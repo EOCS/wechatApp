@@ -1,6 +1,6 @@
 export function formatDesc(html, count = 50) {
   // 截取前50个字
-  return html.replace(/<[^>]+>/g, '').substr(0, count)
+  return html.replace(/<[^>]+>/g, '').substr(0, count).trim()
 }
 
 export function formatDate(ms) {
@@ -15,6 +15,19 @@ export function toDouble(num) {
 }
 
 export function getImgSrc(str) {
-  const res = str.match(/src=[\'\"]?([^\'\"]*)[\'\"]?/i)[1]
+  const res = str.match(/src=[\'\"]?([^\'\"]*)[\'\"]?/i)
   return res ? res[1] : ''
+}
+
+export function getByteLen(val) {
+  var len = 0;
+  for (var i = 0; i < val.length; i++) {
+    var a = val.charAt(i);
+    if (a.match(/[^\x00-\xff]/ig) != null) {
+      len += 2;
+    } else {
+      len += 1;
+    }
+  }
+  return len;
 }

@@ -1,66 +1,71 @@
-// miniprogram/pages/mine/mine.js
+const app = getApp()
+const db = wx.cloud.database()
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    username: '',
+    avatar: '',
+    showEdit: false,
+    showEditAvatar: false,
+    value: '',
+    showInputModal: false
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  onLoad () {
+    const d = app.globalData.userInfo
+    if (d) {
+      this.setData({
+        username: d.username,
+        avatar: d.avatar || '/images/tabbar/icon_signal_fill.png',
+        showEdit: /mid\d+/.test(d.username),
+        showEditAvatar: !d.avatar
+      })
+    }
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  uploadImg() {
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['compressed'],
+      sourceType: ['album', 'camera'],
+      success: res => {
+        wx.cloud.uploadFile({
+          cloudPath: `avatar/${new Date().getTime()}.png`,// 文件名
+          filePath: res.tempFilePaths[0], // 文件路径
+        }).then(r => {
+          const avatar = r.fileID
+          app.globalData.userInfo.avatar = avatar
+          this.setData({ avatar, showEditAvatar: false })
+          
+          wx.cloud.callFunction({
+            name: 'updateAvatar',
+            data: { avatar }
+          }).then(res => {
+            console.log(res)
+          }).catch(console.error)
+        })
+      }
+    })
+  },
+  showModal() {
+    this.setData({showInputModal: true})
+  },
+  cancel() {
+    this.setData({ showInputModal: false })
+  },
+  
+  inputName(e) {
+    const { value } = e.detail
+    this.setData({ value })
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  uploadName() {
+    const username = this.data.value
+    if (!username) return;
+    this.setData({ username, showInputModal: false })
+    app.globalData.userInfo.username = username
+    wx.cloud.callFunction({
+      name: 'updateAvatar',
+      data: { username }
+    }).catch(console.error)
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

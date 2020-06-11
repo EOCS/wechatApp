@@ -1,0 +1,10 @@
+function to(num) {
+  return +num >= 10 ? num : '0' + num
+}
+var date = function (ms) {
+  var d = getDate(+ms)
+  return to(d.getMonth() + 1) + '-' + to(d.getDate()) + ' ' + to(d.getHours()) + ':' + to(d.getMinutes())
+}
+module.exports = {
+  date: date
+};

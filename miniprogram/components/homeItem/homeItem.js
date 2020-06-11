@@ -1,7 +1,7 @@
 // components/homeItem/homeItem.js
 Component({
   options: {
-    addGlobalClass: true,
+    // addGlobalClass: true,
   },
   /**
    * 组件的属性列表

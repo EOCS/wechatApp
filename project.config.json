@@ -80,10 +80,10 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 6,
 					"name": "pages/detail/detail",
 					"pathName": "pages/detail/detail",
-					"query": "id=463448e05ec8c2a900153fc50d1e4fa9",
+					"query": "id=baada3ac5ee194810096aaa57ba67012",
 					"scene": null
 				},
 				{
@@ -111,6 +111,7 @@
 					"id": -1,
 					"name": "pages/home/home",
 					"pathName": "pages/home/home",
+					"query": "",
 					"scene": null
 				}
 			]

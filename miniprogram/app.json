@@ -13,7 +13,7 @@
   ],
   "window": {
     "backgroundColor": "#fefefe",
-    "backgroundTextStyle": "light",
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#fefefe",
     "navigationBarTitleText": "小白",
     "navigationBarTextStyle": "black"

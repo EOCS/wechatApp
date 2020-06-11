@@ -1,5 +1,6 @@
 const app = getApp();
 const db = wx.cloud.database()
+const _ = db.command
 import { formatDesc, formatDate, getImgSrc } from '../../utils/format.js'
 Page({
   data: {
@@ -87,7 +88,15 @@ Page({
   preview() {
     this.editorCtx.getContents({
       success: res => {
-        this.setData({ html: res.html, showPreview: true });
+        console.log(res, 9)
+        if (formatDesc(res.html)) {
+          this.setData({ html: res.html, showPreview: true });
+        } else {
+          wx.showToast({
+            title: '请先输入内容哟～',
+            icon: 'none'
+          })
+        }
       }
     });
   },
@@ -102,15 +111,22 @@ Page({
       title: '正在发布',
     })
     const date = date || new Date().getTime();
-    const key = `content.${date}`
+    const { html } = this.data
+    const showImg = getImgSrc(html)
+    const data = {
+      desc: formatDesc(html),
+      showDate: formatDate(date),
+      content: _.unshift({
+        date,
+        html
+      })
+    }
+    if (showImg) {
+      data.showImg = showImg
+    }
     db.collection('cases').doc(this.id)
       .update({
-        data: {
-          [key]: this.data.html,
-          desc: formatDesc(this.data.html),
-          showDate: formatDate(date),
-          showImg: getImgSrc(this.data.html),
-        },
+        data,
         success: () => {
           wx.hideLoading()
           wx.redirectTo({

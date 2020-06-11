@@ -12,7 +12,6 @@
   display: flex;
   align-items: center;
   box-sizing: border-box;
-  padding-left: 28rpx;
 }
 .search-bar {
   display: flex;
@@ -26,7 +25,7 @@
 }
 .icon-icon_roundadd {
   font-size: 45rpx;
-  padding-right: 28rpx;
+  padding: 28rpx;
 }
 .icon-icon_search {
   font-size: 36rpx;

@@ -1,7 +1,7 @@
 <view class="titlebar">
   <view class="search-wrapper" style="padding-top: {{statusBarHeight}}px; height: {{navBarHeight}}px">
     <view class="iconfont icon-icon_roundadd" bindtap="addModal"></view>
-    <view class="search-bar" style="height: {{menuHeight}}px">
+    <view class="search-bar" style="height: {{menuHeight}}px" bindtap="toSearch">
       <view class="iconfont icon-icon_search"></view>
       <view class="placeholder">新冠状肺炎</view>
     </view>

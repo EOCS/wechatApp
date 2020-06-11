@@ -24,7 +24,7 @@ Page({
     this.lock = true
     wx.showNavigationBarLoading()
     const res = await db.collection('collection').where({
-      _openid: app.globalData.openid,
+      _openid: app.globalData.userInfo.OPENID,
     }).skip(this.pages * MAX_LIMIT).limit(20).get();
     const list = this.data.list.concat(res.data)
     this.setData({ list })

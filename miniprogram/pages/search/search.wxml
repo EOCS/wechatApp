@@ -1,4 +1,18 @@
-<view class="title-bar" style="height:{{navBarHeight}}px;">
+<view class="search-wrapper" style="padding-top: {{statusBarHeight}}px; height: {{navBarHeight}}px">
+  <view class="iconfont icon-icon_left" bindtap="back"></view>
+  <view class="search-bar" style="height: {{menuHeight}}px">
+    <view class="iconfont icon-icon_search" bindtap="confirmSearchBtn"></view>
+    <input class="search" 
+      style="height: {{menuHeight}}px"
+      placeholder="新冠状肺炎"
+      confirm-type="search"
+      focus="true"
+      bindconfirm="confirmSearch"
+      bindinput="searchInpt" />
+  </view>
+</view>
+
+<!-- <view class="title-bar" style="height:{{navBarHeight}}px;">
   <input class="search-bar" 
   style="height:{{menuHeight}}px; min-height:{{menuHeight}}px; line-height:{{menuHeight}}px; bottom:{{menuBotton}}px;"
   placeholder="搜索"
@@ -10,9 +24,9 @@
   </input>
   <image class="search-icon" src="/images/icon/search.png" bindtap="confirmSearchBtn"></image>
   <image class="back-icon" src="/images/icon/back.png" bindtap="back"></image>
-</view>
+</view> -->
 
-<CasesList list="{{list}}" />
+<home-item list="{{list}}" />
 
 <!-- <view class="tags">
 	<view class="title">历史搜索</view>
